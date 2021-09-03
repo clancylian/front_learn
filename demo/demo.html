@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="lib/vue.js"></script>
+</head>
+
+<body>
+
+<h2>JavaScript 函数</h2>
+
+<p>本例调用了一个执行计算的函数，然后返回结果：</p>
+
+<p id="demo"></p>
+
+<p id="demo1"></p>
+
+<p id="demo2"></p>
+
+<p id="demo3"></p>
+
+<!-- 
+    onclick事件
+    onchange
+    onmousehover
+
+-->
+<button onmouseover="this.innerHTML=Date()" onmouseout="this.innerHTML='时间是？'">时间是？</button>
+
+<p id="demo4"></p>
+
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<p id="demo8"></p>
+<p id="demo9"></p>
+<p id="demo10"></p>
+
+<div id="app-7">
+    <ol>
+      <!--
+        现在我们为每个 todo-item 提供 todo 对象
+        todo 对象是变量，即其内容可以是动态的。
+        我们也需要为每个组件提供一个“key”，稍后再
+        作详细解释。
+      -->
+      <todo-item 
+        v-for="item in groceryList"
+        v-bind:todo="item"
+        v-bind:key="item.id"
+      ></todo-item>
+    </ol>
+  </div>
+  
+  <button v-bind:disabled="isButtonDisabled">Button</button>
+
+
+<script>
+
+
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
+var app7 = new Vue({
+  el: '#app-7',
+  data: {
+    isButtonDisabled:false,
+    groceryList: [
+      { id: 0, text: '蔬菜' },
+      { id: 1, text: '奶酪' },
+      { id: 2, text: '随便其它什么人吃的东西' }
+    ]
+  }
+})
+
+//函数
+function myFunction(p1, p2) {
+    return p1 * p2;
+}
+
+function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit-32);
+} 
+
+//函数调用
+document.getElementById("demo").innerHTML = myFunction(7, 8);
+
+document.getElementById("demo1").innerHTML =
+"温度是：" + toCelsius(86) + " 摄氏度。";
+
+var car = {type:"porsche", model:"911", color:"white"};
+
+// 访问属性，对象方法
+var person = {firstName:"Bill", lastName:"Gates", age:62, eyeColor:"blue",
+ fullname: function(){return this.firstName + " " + this.lastName}};
+
+document.getElementById("demo2").innerHTML = person["eyeColor"];
+
+// 字符长度
+var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var sln = txt.length;
+document.getElementById("demo4").innerHTML = txt.length;
+
+// 转义
+var x = "中国是瓷器的故乡，因此 china 与\"China（中国）\"同名。"
+
+// 字符串相关方法
+// indexOf lastIndexOf() search() 
+//slice(start, end) substring(start, end) substr(start, length) 
+//replace() toUpperCase() toLowerCase() concat() trim()
+//charAt() charCodeAt() split()
+var str = "The full name of Chin a is the People's Republic of China."; 
+var pos = str.indexOf("China");
+document.getElementById("demo5").innerHTML = pos;
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/axure-redline-tool@latest/web/axure-redline-plugin.js"></script>
+
+</body>
+</html>
