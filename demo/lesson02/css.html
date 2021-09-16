@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-size: 16px;
+        }
+        /* 选择器 {样式} */
+        /* 小写 */
+        /* 一条属性一行 */
+        /* 空格 */
+        /* 标签选择器 */
+        
+        p {
+            color: green;
+            /* 字体属性 */
+            /* 字体 */
+            font-family: 'Microsoft YaHei', Times, serif;
+            /* 字体大小 */
+            font-size: 18px;
+            /* 字体粗细 400-normal 700-bold */
+            font-weight: 700;
+            /* 文字样式 */
+            font-style: italic;
+            /* 必须有字体、字体大小，顺序不能变 */
+            font: italic 700 18px 'Microsoft YaHei';
+        }
+        /* 类选择器 */
+        /* 样式点定义 结构类调用 一个或多个 开发最常用 */
+        
+        .red {
+            color: rgb(63, 114, 101);
+        }
+        /* id选择器 */
+        /* 样式#定义 结构id调用 只能调一次 其他勿使用 */
+        
+        #pink {
+            color: pink;
+            /* 分割 */
+            /* 文本属性 */
+            text-align: left;
+            /* 下划线underline 删除线 line-through*/
+            text-decoration: line-through;
+            text-decoration: none;
+            /* 缩进 */
+            text-indent: 2em;
+            /* 行间距 行高*/
+            line-height: 2cm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 通配符选择器 */
+    </style>
+</head>
+
+<body>
+    <p>你好</p>
+    <p>你好</p>
+    <p>你好</p>
+    <div class="red">对不起</div>
+    <div>对不起</div>
+    <div id="pink">对不起</div>
+    <div id="pink">对不起</div>
+
+    <div class="waibu">你是不是傻</div>
+
+
+</body>
+
+</html>
